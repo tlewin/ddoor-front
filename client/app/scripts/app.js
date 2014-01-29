@@ -6,7 +6,7 @@ angular.module('clientApp', [
   'ngSanitize',
   'ngRoute'
 ])
-  .config(function ($locationProvider, $routeProvider, $httpProvider) {
+  .config(['$locationProvider', '$routeProvider', '$httpProvider', function ($locationProvider, $routeProvider, $httpProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -34,5 +34,13 @@ angular.module('clientApp', [
         }
       };
     });
-
-  });
+  }])
+  .run(['$rootScope', '$location', 'Auth', function($rootScope, $location, Auth) {
+    $rootScope.$on('$routeChangeStart', function() {
+      if(Auth.isLoggedIn()) {
+        $location.path('/');
+      } else {
+        $location.path('/login');
+      }
+    });
+  }]);

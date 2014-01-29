@@ -12,7 +12,7 @@ angular.module('clientApp')
       },
 
       isLoggedIn: function() {
-        return !this.currentUser();
+        return !!this.currentUser();
       },
 
       login: function(username, password) {

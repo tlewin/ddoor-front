@@ -5,13 +5,17 @@ require 'pry'
 
 configure do 
   use Rack::Session::Cookie, secret: '123'
+
+  disable :protection
+  # set :protection, :except => [:http_origin]
+  # use Rack::Protection::HttpOrigin, :origin_whitelist => ['http://127.0.0.1:9000']
 end
 
 helpers do 
 
   def login username, password
     if username == 'xislo'
-      session[:user] = 1
+      session[:user] = Time.now
     else
       nil
     end
