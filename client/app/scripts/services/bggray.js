@@ -10,12 +10,10 @@ angular.module('clientApp')
       },
 
       bgGray: function() {
-        console.log('herex');
         return bgGrayFlag;
       },
 
       setBgGray: function(flag) {
-        console.log('here');
         bgGrayFlag = flag;
       }
     };

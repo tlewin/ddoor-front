@@ -37,10 +37,10 @@ angular.module('clientApp', [
   }])
   .run(['$rootScope', '$location', 'Auth', function($rootScope, $location, Auth) {
     $rootScope.$on('$routeChangeStart', function() {
-      if(Auth.isLoggedIn()) {
-        $location.path('/');
-      } else {
-        $location.path('/login');
-      }
+      // if(Auth.isLoggedIn()) {
+      //   $location.path('/');
+      // } else {
+      //   $location.path('/login');
+      // }
     });
   }]);
