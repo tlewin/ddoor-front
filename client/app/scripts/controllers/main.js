@@ -2,11 +2,9 @@
 
 angular.module('clientApp')
   .controller('MainCtrl', ['$scope', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.$on('photo-fail', function() {
+      // TODO: Report the error to the user
+    });
   }]);
 
 angular.module('clientApp')
