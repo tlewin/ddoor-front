@@ -65,6 +65,11 @@ module.exports = function (grunt) {
     connect: {
       options: {
         port: 9000,
+        // protocol: 'https',
+        // key: grunt.file.read('server.key').toString(),
+        // cert: grunt.file.read('server.crt').toString(),
+        // ca: grunt.file.read('ca.crt').toString(),
+        // passphrase: 'grunt',        
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35729
@@ -74,25 +79,28 @@ module.exports = function (grunt) {
           context: '/login',
           host: 'localhost',
           port: 4567,
-          https: false,
+          https: true,
           changeOrigin: true,
-          xforward: false
+          xforward: false,
+          ws: false
         },
         {
           context: '/logout',
           host: 'localhost',
           port: 4567,
-          https: false,
+          https: true,
           changeOrigin: true,
-          xforward: false
+          xforward: false,
+          ws: false
         },
         {
           context: '/api/**/*',
           host: 'localhost',
           port: 4567,
-          https: false,
+          https: true,
           changeOrigin: true,
-          xforward: false
+          xforward: false,
+          ws: false
         }
       ],
       livereload: {
