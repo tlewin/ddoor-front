@@ -9,6 +9,12 @@ angular.module('clientApp')
   }]);
 
 angular.module('clientApp')
+  .controller('AdminCtrl', ['$scope', function ($scope) {
+    return 0;
+  }]);
+
+
+angular.module('clientApp')
   .controller('LoginCtrl', ['$rootScope', '$scope', '$location', 'Auth', function ($rootScope, $scope, $location, Auth) {
     // Setup the background before start
     $rootScope.isGrayBg = true;
