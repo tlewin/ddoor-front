@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<!-- <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">DDoor</a>
@@ -10,17 +10,28 @@
     </ul>
   </div>
 </div>
-  <div class="row">
-    <div class="col-md-3">
-      <ul class="list-group">
-        <a class="list-group-item active" href="#">Geral</a>
-        <a class="list-group-item" href="#">Regras de acesso</a>
-        <a class="list-group-item" href="#">Crach&aacute;s</a>
-        <a class="list-group-item" href="#">Relat&oacute;rios</a>
-        <a class="list-group-item" href="#">Usu&aacute;rios</a>
-      </ul>
-    </div>
-    <div class="col-md-9">
+ -->
 
-    </div>
+<div class="sidebar">
+  <ul class="list-group">
+    <a class="list-group-item" ng-class="{active: selection == 'general'}" ng-click="changeSelection('general')" href>Geral</a>
+    <a class="list-group-item" ng-class="{active: selection == 'access'}" ng-click="changeSelection('access')" href>Regras de acesso</a>
+    <a class="list-group-item" ng-class="{active: selection == 'badge'}" ng-click="changeSelection('badge')" href>Crach&aacute;s</a>
+    <a class="list-group-item" ng-class="{active: selection == 'd'}" ng-click="changeSelection('d')" href>Relat&oacute;rios</a>
+    <a class="list-group-item" ng-class="{active: selection == 'e'}" ng-click="changeSelection('e')" href>Usu&aacute;rios</a>
+  </ul>
+</div>
+<div class="admin-page">
+  <div ng-show="selection == 'general'" ng-controller="AdminGeneralCtrl">
+    <h3 class="page-header">Geral</h3>
   </div>
+
+  <div ng-show="selection == 'access'" ng-controller="AdminAccessCtrl">
+    <h3 class="page-header">Regras de Acesso</h3>
+  </div>
+
+  <div ng-show="selection == 'badge'" ng-controller="AdminBadgeCtrl">
+    <h3 class="page-header">Cadastro de Crach&aacute;s</h3>
+  </div>
+</div>
+

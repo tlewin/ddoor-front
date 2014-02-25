@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('clientApp', [
+  'ngAnimate',
   'ngCookies',
   'ngResource',
   'ngSanitize',

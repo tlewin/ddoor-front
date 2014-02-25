@@ -10,9 +10,31 @@ angular.module('clientApp')
 
 angular.module('clientApp')
   .controller('AdminCtrl', ['$scope', function ($scope) {
+    $scope.selection = 'general';
+
+    $scope.changeSelection = function(selection) {
+      // TODO include modification check
+      $scope.selection = selection;
+    };
+    
     return 0;
   }]);
 
+
+angular.module('clientApp')
+  .controller('AdminGeneralCtrl', ['$scope', function ($scope) {
+    return 0;
+  }]);
+
+angular.module('clientApp')
+  .controller('AdminAccessCtrl', ['$scope', function ($scope) {
+    return 0;
+  }]);
+
+angular.module('clientApp')
+  .controller('AdminBadgeCtrl', ['$scope', function ($scope) {
+    return 0;
+  }]);
 
 angular.module('clientApp')
   .controller('LoginCtrl', ['$rootScope', '$scope', '$location', 'Auth', function ($rootScope, $scope, $location, Auth) {

@@ -10,10 +10,10 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 }
 
 /* Space out content a bit */
-body {
-    padding-top: 70px;
-    padding-bottom: 20px;
-}
+// body {
+//     padding-top: 70px;
+//     padding-bottom: 20px;
+// }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -72,29 +72,62 @@ body {
 }
 
 .login-box {
+    margin: 20px auto 0;
     display: inline-block;
-    padding: 20px;
-    margin: 20% auto 0;
-    border: 1px solid #cccccc;
-    background: #ffffff;
-    border-radius: 8px;
+    // border-radius: 8px;
+    
+    form {
+        padding: 20px;
+        // border: 1px solid #cccccc;
+        background: #ffffff;
+    
+        h1 {
+            margin-bottom: 25px;
+            text-align: center;
+        }
 
-    h1 {
-        margin-bottom: 25px;
-        text-align: center;
-    }
+        .alert-container {
+            height: 55px;
 
-    .alert-container {
-        height: 55px;
-
-        .alert {
-            padding: 5px 10px;
+            .alert {
+                padding: 5px 10px;
+            }
         }
     }
 }
 
 .top5 {margin-top: 5px;}
 .top10 {margin-top: 10px;}
+
+.admin-page {
+    margin-left: 300px;
+    padding: 20px;
+    .page-header {
+        margin-top: 0;
+    }
+}
+
+.space-out {
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.sidebar {
+    display: block;
+    float: left;
+    width: 300px;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 300px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        background: #f2f2f2;
+    }
+}
+
 
 
 /* Responsive: Portrait tablets and up */
